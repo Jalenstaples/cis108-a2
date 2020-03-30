@@ -24,14 +24,22 @@ let SCRABBLE_TILE_SCORES = {
  */
 
 function scrabbleScore(word) {
-  // This is your job. :)
-}
+  var total = 0;
+let newword=word.toLowerCase();
+  for (letter of newword) {
+    total += SCRABBLE_TILE_SCORES[letter]
 
+  }
+  return total;
+}
 if (require.main === module) {
   console.log('Running sanity checks for scrabbleScore:');
 
   console.log(scrabbleScore('aaa') === 3);
   console.log(scrabbleScore('aaa') === scrabbleScore('AaA'));
+console.log(scrabbleScore('abc'));
+console.log(scrabbleScore('AbC'));
+console.log(scrabbleScore('zzXasf'));
 
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
